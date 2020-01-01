@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+
+  <head>
+    {{ partial "site-title.html" . }}
+    {{ partial "site-styles.html" . }}
+    {{ partial "site-scripts.html" . }}
+  </head>
+
+  <body>
+    {{ partial "site-header.html" . }}
+    {{ block "main" . }}
+    {{ end }}
+    {{ partial "site-footer.html" . }}
+  </body>
+
+</html>
+
