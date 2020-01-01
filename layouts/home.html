@@ -1,0 +1,11 @@
+
+{{ define "main" }}
+
+abc<hr/>
+
+  {{ range .Pages }}
+    <a href={{ .URL }}>{{ .Title }} </a><br/>
+  {{ end }}
+
+<hr/>xyz
+{{ end }}
