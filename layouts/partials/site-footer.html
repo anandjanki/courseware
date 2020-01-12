@@ -1,10 +1,10 @@
 <footer>
   <div class="flex justify-between bg-gray pa3 white-70">
     <div>
-      {{ partial "footer/site-footer-left.html" . }}
+      {{ partial "footer/site-footer-part.html" (dict "site" .Site "meta_pages" .Site.Params.meta_pages_left) }}
     </div>
     <div>
-      {{ partial "footer/site-footer-right.html" . }}
+      {{ partial "footer/site-footer-part.html" (dict "site" .Site "meta_pages" .Site.Params.meta_pages_right) }}
     </div>
   </div>
 </footer>

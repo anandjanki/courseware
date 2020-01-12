@@ -1,6 +1,0 @@
-{{ $site := .Site }}
-{{ range .Site.Params.meta_pages_right }}
-  {{ with $site.GetPage . }}
-    <a href="{{ .URL }}" class="ttu">{{ .Title }}</a>
-  {{ end }}
-{{ end }}

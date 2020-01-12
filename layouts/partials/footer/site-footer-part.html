@@ -1,5 +1,5 @@
-{{ $site := .Site }}
-{{ range .Site.Params.meta_pages_left }}
+{{ $site := .site }}
+{{ range .meta_pages }}
   {{ with $site.GetPage . }}
     <a href="{{ .URL }}" class="ttu">{{ .Title }}</a>
   {{ end }}
