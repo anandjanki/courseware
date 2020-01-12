@@ -1,2 +1,7 @@
 
-<link rel="stylesheet" href="{{ `/css/main.css` | relURL }}" />
+<link rel="stylesheet" href="https://unpkg.com/tachyons@4.10.0/css/tachyons.min.css"/>
+
+{{- $sass := resources.Get "sass/courseware.scss" }}
+{{- $styles := $sass | resources.ToCSS }}
+<link rel="stylesheet" href="{{ $styles.RelPermalink }}" integrity="{{ $styles.Data.Integrity }}">
+
