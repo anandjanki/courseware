@@ -1,0 +1,10 @@
+<a href="{{ .Site.BaseURL }}">
+  {{- if isset .Site.Params "sitelogo" -}}
+    {{- with .Site.Params.SiteLogo -}}
+      <img src="{{ . | relURL }}" alt="Logo" class="w-10"/>
+    {{- end -}}
+  {{- else -}}
+    <span>{{ .Site.Title }}</span>
+  {{- end -}}
+</a>
+

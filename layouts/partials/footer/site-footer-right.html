@@ -1,0 +1,6 @@
+{{ $site := .Site }}
+{{ range .Site.Params.footer_links }}
+  {{ with $site.GetPage . }}
+    <a href="{{ .URL }}" class="ttu">{{ .Title }}</a>
+  {{ end }}
+{{ end }}
