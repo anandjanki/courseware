@@ -1,6 +1,6 @@
 {{ $site := .site }}
 {{ range .meta_pages }}
   {{ with $site.GetPage . }}
-    <a href="{{ .URL }}" class="ttu">{{ .Title }}</a>
+    <a href="{{ .URL }}" class="ttu pa2">{{ .Title }}</a>
   {{ end }}
 {{ end }}
