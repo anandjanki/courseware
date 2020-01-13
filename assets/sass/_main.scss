@@ -1,0 +1,86 @@
+
+.zs {
+  font-family: 'Zilla Slab', serif;
+}
+.ms {
+  font-family: 'Montserrat', sans-serif;
+}
+
+body {
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 300;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: 'Zilla Slab', serif;
+  font-weight: 600;
+  margin-top: 2rem;
+  color: #555555; /* dark-grey */
+}
+
+strong {
+  font-weight: 500;
+}
+
+p {
+  line-height: 2em;
+  text-align: justify;
+}
+
+li {
+  line-height: 1.5em;
+}
+
+/* not used yet
+pre {
+  font-family: 'Roboto Mono', serif;
+  font-weight: 300;
+  font-size: 0.7em;
+  margin-left: 4em;
+} */
+
+a {
+  color: #357EDD; /* blue */
+  text-decoration: none;
+  transition: color .15s ease-in;
+
+  &:visited {
+    color: red;
+  }
+
+  &:hover {
+    color: #00449E; /* dark-blue */
+  }
+
+  &:active {
+    color: #96CCFF; /* light-blue */
+  }
+
+}
+
+.anchor {
+  color: #00449E; /* dark-blue */
+}
+
+* {
+  box-sizing: border-box;
+}
+
+/* Mobile Styles */
+@media only screen and (max-width: 400px) {
+  body {
+  }
+}
+
+/* Tablet Styles */
+@media only screen and (min-width: 401px) and (max-width: 960px) {
+  body {
+  }
+}
+
+/* Desktop Styles */
+@media only screen and (min-width: 961px) {
+  body {
+  }
+}
+

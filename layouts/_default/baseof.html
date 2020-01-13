@@ -9,8 +9,10 @@
 
   <body>
     {{ partial "site-header.html" . }}
-    {{ block "main" . }}
-    {{ end }}
+    <div class="mw7 center pa4"> 
+      {{ block "main" . }}
+      {{ end }}
+    </div>
     {{ partial "site-footer.html" . }}
   </body>
 
