@@ -1,29 +1,63 @@
+* {
+  box-sizing: border-box;
+}
 
-.zs {
+
+%bodyfont {
   font-family: 'Zilla Slab', serif;
 }
-.ms {
-  font-family: 'Montserrat', sans-serif;
-}
 
-body {
-  font-family: 'Montserrat', sans-serif;
+%bodyfont-light {
+  @extend %bodyfont;
   font-weight: 300;
 }
 
-h1, h2, h3, h4, h5, h6 {
-  font-family: 'Zilla Slab', serif;
+body {
+  @extend %bodyfont-light;
+}
+
+
+%hdrfnt {
+  font-family: 'Josefin Slab', serif;
+}
+
+%hdrfnt-fw_lt {
+  @extend %hdrfnt;
   font-weight: 600;
-  margin-top: 2rem;
-  color: #555555; /* dark-grey */
+}
+
+.hdrfnt-fw_lt {
+  @extend %hdrfnt-fw_lt;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  @extend %hdrfnt-fw_lt;
+}
+
+h1 {
+  text-align: center;
+  border-bottom: 1px solid #000;
+}
+
+h1 { font-size: 4rem; margin-top: 6rem; }
+h2 { font-size: 2.25rem; margin-top: 5rem; }
+h3 { font-size: 1.5rem; margin-top: 2rem; }
+h4 { font-size: 1.25rem; margin-top: 2rem; }
+h5 { font-size: 1rem; margin-top: 1rem;}
+h6 { font-size: .875rem; margin-top: 1rem;}
+
+
+.sidefnt {
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 200;
 }
 
 strong {
-  font-weight: 500;
+  font-weight: 600;
 }
 
 p {
-  line-height: 2em;
+  line-height: 1.2rem;
   text-align: justify;
 }
 
@@ -31,21 +65,13 @@ li {
   line-height: 1.5em;
 }
 
-/* not used yet
-pre {
-  font-family: 'Roboto Mono', serif;
-  font-weight: 300;
-  font-size: 0.7em;
-  margin-left: 4em;
-} */
-
 a {
   color: #357EDD; /* blue */
   text-decoration: none;
   transition: color .15s ease-in;
 
   &:visited {
-    color: red;
+    color: #96CCFF; /* light-blue */
   }
 
   &:hover {
@@ -62,8 +88,28 @@ a {
   color: #00449E; /* dark-blue */
 }
 
-* {
-  box-sizing: border-box;
+.hidden {
+  display: none;
+}
+
+.fixed-top-left {
+  position: fixed;
+  top: 0;
+  left: 0;
+}
+
+.fixed-top-right {
+  position: fixed;
+  top: 0;
+  right: 0;
+}
+
+.flex1 {
+  flex: 1;
+}
+
+.flexi {
+  flex: initial;
 }
 
 /* Mobile Styles */
