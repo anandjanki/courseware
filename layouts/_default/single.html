@@ -1,5 +1,14 @@
+
+{{ define "left-sidebar" }}
+  {{ partial "left-sidebar.html" . }}
+{{ end }}
+
 {{ define "main" }}
   <h1>{{ .Title }}</h1>
   {{ .Content }}
+{{ end }}
+
+{{ define "right-sidebar" }}
+  {{ partial "right-sidebar.html" . }}
 {{ end }}
 

@@ -8,13 +8,33 @@
   </head>
 
   <body>
+
     {{ partial "site-header.html" . }}
-    <div class="mw7 center pa4"> 
-      {{ block "main" . }}
-      {{ end }}
+
+    <div class="flex flex-column min-vh-100">
+    <div class="flex justify-between flex1">
+      <div class="w-20 mw5 fixed-top-left mt5 sidefnt br"> 
+        {{ block "left-sidebar" . }}
+        {{ end }}
+      </div>
+      <div class="w-80 mw7 center pa4 mt5"> 
+        {{ block "main" . }}
+        {{ end }}
+      </div>
+      <div class="w-20 mw5 fixed-top-right mt5 sidefnt bl">
+        {{ block "right-sidebar" . }}
+        {{ end }}
+      </div>
     </div>
+
+    <div class="flexi">
     {{ partial "site-footer.html" . }}
+    </div>
+    </div>
+
   </body>
+
+
 
 </html>
 

@@ -1,11 +1,19 @@
 
+{{ define "left-sidebar" }}
+{{ end }}
+
 {{ define "main" }}
 
-abc<hr/>
+<hr/>
 
   {{ range .Pages }}
     <a href={{ .URL }}>{{ .Title }} </a><br/>
   {{ end }}
 
-<hr/>xyz
+<hr/>
+
 {{ end }}
+
+{{ define "right-sidebar" }}
+{{ end }}
+
