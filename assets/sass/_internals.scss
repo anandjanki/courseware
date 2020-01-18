@@ -1,0 +1,35 @@
+/* Styling for Hugo internal/markdown generated HTML */
+code {
+  padding: 0 $p4;
+  color: $gray-700;
+  font-family: Courier New, serif;
+}
+
+pre {
+  padding: $p16;
+  border: .5px solid $gray-600;
+  overflow-x: auto;
+  margin-left: $m16;
+  margin-right: $m16;
+}
+
+blockquote {
+  margin: $m8 0;
+  padding: $p8 $p16 0 ($p16 - $p4); //to keep total left space 16dp
+
+  border-left: $p4 solid $gray-200;
+  border-radius: $border-radius;
+
+  :first-child { margin-top: 0; }
+  :last-child { margin-bottom: 0; }
+}
+
+.figs {
+  text-align: center;
+  h4 {
+    @extend %bodyfont-light;
+    font-size: .8rem;
+    background-color: inherit;
+  }
+}
+

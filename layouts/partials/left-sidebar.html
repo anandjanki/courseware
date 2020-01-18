@@ -1,0 +1,15 @@
+{{ with .CurrentSection.Parent }} 
+<ul>
+  <li><a href="{{ .Permalink }}">{{ .Title | upper }}</a>
+  <ul>
+  {{ range .Sections }} 
+    <li><a href="{{ .Permalink }}">{{ .Title | upper }}</a>
+    <ul>
+    {{ range .Pages }} 
+      <li><a href="{{ .Permalink }}">{{ .Title | upper }}</a>
+    {{ end }}
+    </ul>
+  {{ end }}
+  </ul>
+</ul>
+{{ end }}

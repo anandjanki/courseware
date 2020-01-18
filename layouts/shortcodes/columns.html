@@ -1,0 +1,7 @@
+<div class="book-columns flex justify-between">
+  {{ range split .Inner "<--->" }}
+  <div class="flex-1">
+    {{ . | markdownify }}
+  </div>
+  {{ end }}
+</div>
