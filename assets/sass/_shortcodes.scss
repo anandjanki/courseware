@@ -1,0 +1,102 @@
+/* Styling for custom shortcodes */
+.markdown-inner {
+  // Util class to remove extra margin in nested markdown content
+  > :first-child {
+    margin-top: 0;
+  }
+  > :last-child {
+    margin-bottom: 0;
+  }
+}
+
+.flex-1 {
+  flex: 1;
+}
+
+.book-columns {
+  > :first-child {
+    margin-left: 0;
+    margin-right: 2rem;
+  }
+  > div {
+    margin-left: 2rem;
+    margin-right: 2rem;
+  }
+  > :last-child {
+    margin-left: 2rem;
+    margin-right: 0;
+  }
+}
+
+.book-hint {
+  @each $name, $color in $hint-colors {
+    &.#{$name} {
+      border-left-color: $color;
+      background-color: rgba($color, 0.1);
+      // background-color: $gray-100;
+      padding-bottom: $p8;
+    }
+  };
+}
+
+.book-expand {
+  margin-top: $p16;
+  margin-bottom: $p16;
+
+  border: $p1 solid $gray-200;
+  border-radius: $border-radius;
+
+  overflow: hidden;
+
+  .book-expand-head {
+    background: $gray-100;
+    padding: $p8 $p16;
+    cursor: pointer;
+  }
+
+  .book-expand-content {
+    display: none;
+    padding: $p16;
+  }
+
+  input[type="checkbox"]:checked + .book-expand-content {
+    display: block;
+  }
+}
+
+// {{< tabs >}}
+.book-tabs {
+  margin-top: $p16;
+  margin-bottom: $p16;
+
+  border: $p1 solid $gray-200;
+  border-radius: $border-radius;
+
+  overflow: hidden;
+
+  display: flex;
+  flex-wrap: wrap;
+
+  label {
+    display: inline-block;
+    padding: $p8 $p16;
+    border-bottom: $p1 transparent;
+    cursor: pointer;
+  }
+
+  .book-tabs-content {
+    order: 999; //Move content blocks to the end
+    width: 100%;
+    border-top: $p1 solid $gray-100;
+    padding: $p16;
+    display: none;
+  }
+
+  input[type="radio"]:checked + label {
+    border-bottom: $p1 solid $color-link;
+  }
+  input[type="radio"]:checked + label + .book-tabs-content {
+    display: block;
+  }
+}
+
