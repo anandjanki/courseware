@@ -1,15 +1,22 @@
+{{ $currentPage := .Page }}
+{{ $currentSection := .CurrentSection }}
 {{ with .CurrentSection.Parent }} 
-<ul>
-  <li><a href="{{ .Permalink }}">{{ .Title | upper }}</a>
-  <ul>
+<nav id="CourseContents">
+<ul id="root-nav">
+  <li {{ if eq $currentPage .Page }} id="current-page" {{ end }}><a href="{{ .Permalink }}">{{ .Title | upper }}</a></li>
+  <ul id="parent-nav">
   {{ range .Sections }} 
-    <li><a href="{{ .Permalink }}">{{ .Title | upper }}</a>
-    <ul>
+    <li {{ if eq $currentPage .Page }} id="current-page" {{ end }}><a href="{{ .Permalink }}">{{ .Title | upper }}</a>
+    {{ if eq . $currentSection }}</li>
+    <ul id="page-nav">
     {{ range .Pages }} 
-      <li><a href="{{ .Permalink }}">{{ .Title | upper }}</a>
+      <li {{ if eq $currentPage .Page }} id="current-page" {{ end }}><a href="{{ .Permalink }}">{{ .Title | upper }}</a></li>
     {{ end }}
     </ul>
+    {{ end }}
   {{ end }}
   </ul>
 </ul>
+</nav>
 {{ end }}
+

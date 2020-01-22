@@ -6,12 +6,10 @@
 %bodyfont {
   font-family: 'Zilla Slab', serif;
 }
-
 %bodyfont-light {
   @extend %bodyfont;
   font-weight: 300;
 }
-
 body {
   @extend %bodyfont-light;
 }
@@ -20,25 +18,20 @@ body {
 %hdrfnt {
   font-family: 'Josefin Slab', serif;
 }
-
 %hdrfnt-fw_lt {
   @extend %hdrfnt;
   font-weight: 600;
 }
-
 .hdrfnt-fw_lt {
   @extend %hdrfnt-fw_lt;
 }
-
 h1, h2, h3, h4, h5, h6 {
   @extend %hdrfnt-fw_lt;
 }
-
 h1 {
   text-align: center;
   border-bottom: 1px solid #000;
 }
-
 h1 { font-size: 4rem; margin-top: 6rem; }
 h2 { font-size: 2.25rem; margin-top: 5rem; }
 h3 { font-size: 1.5rem; margin-top: 2rem; }
@@ -50,67 +43,62 @@ h6 { font-size: .875rem; margin-top: 1rem;}
 .sidefnt {
   font-family: 'Montserrat', sans-serif;
   font-weight: 200;
+  font-size: 1rem;
 }
+
 
 strong {
   font-weight: 600;
 }
-
 p {
   line-height: 1.2rem;
   text-align: justify;
 }
-
 li {
   line-height: 1.5em;
 }
 
+
 a {
-  color: #357EDD; /* blue */
+  color: $dark-blue;
   text-decoration: none;
   transition: color .15s ease-in;
-
   &:visited {
-    color: #96CCFF; /* light-blue */
+    color: $light-blue;
   }
-
   &:hover {
-    color: #00449E; /* dark-blue */
+    color: $blue;
+    text-decoration: underline;
   }
-
   &:active {
-    color: #96CCFF; /* light-blue */
+    color: $light-blue
   }
-
 }
-
 .anchor {
-  color: #00449E; /* dark-blue */
+  color: $dark-blue;
 }
+
 
 .hidden {
   display: none;
 }
-
 .fixed-top-left {
   position: fixed;
   top: 0;
   left: 0;
 }
-
 .fixed-top-right {
   position: fixed;
   top: 0;
   right: 0;
 }
-
 .flex1 {
   flex: 1;
 }
-
 .flexi {
   flex: initial;
 }
+
 
 /* Mobile Styles */
 @media only screen and (max-width: 400px) {
