@@ -93,6 +93,7 @@
   }
 
   input[type="radio"]:checked + label {
+    color: $color-link;
     border-bottom: $p1 solid $color-link;
   }
   input[type="radio"]:checked + label + .book-tabs-content {

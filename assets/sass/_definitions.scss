@@ -35,9 +35,6 @@ $t-green: #19A974;
 $t-orange: #FF6300;
 $t-red: #FF4136;
 
-$color-link: #05b !default;
-$color-visited-link: #8440f1 !default;
-
 $body-background: white !default;
 $body-font-color: $gray-800 !default;
 $body-font-weight: normal !default;
@@ -65,4 +62,7 @@ $dark-blue: #00449E !default;
 $light-blue: #96CCFF !default;
 $blue: #357EDD !default;
 $light-gray: #aaa !default;
+
+$color-link: $dark-blue;
+$color-visited-link: $light-blue;
 
