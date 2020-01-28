@@ -6,9 +6,11 @@
 
 <hr/>
 
+  <ul class="list pis-0">
   {{ range .Pages }}
-    <a href={{ .URL }}>{{ .Title }} </a><br/>
+    <li><a href={{ .URL }}>{{ .Title }} </a><br/></li>
   {{ end }}
+  </ul>
 
 <hr/>
 

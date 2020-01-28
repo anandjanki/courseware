@@ -6,9 +6,11 @@
 {{ define "main" }}
     <h1>{{ .Title }}</h1>
     {{ .Content }}
+    <ul class="list pis-0">
     {{ range .Pages }}
-      <a href={{ .URL }}>{{ .Title }} </a><br/>
+      <li><a href={{ .URL }}>{{ .Title }} </a></li>
     {{ end }}
+    </ul>
 {{ end }}
 
 {{ define "right-sidebar" }}

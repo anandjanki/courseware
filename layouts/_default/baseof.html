@@ -2,6 +2,7 @@
 <html>
 
   <head>
+    {{ partial "site-meta.html" . }}
     {{ partial "site-title.html" . }}
     {{ partial "site-styles.html" . }}
     {{ partial "site-scripts.html" . }}
@@ -13,15 +14,15 @@
 
     <div class="flex flex-column min-vh-100">
     <div class="flex justify-between flex1">
-      <div class="w-20 mw5 fixed-top-left mt6 sidefnt"> 
+      <div class="sidebar-display w-20 mw5 fixed-top-left mt6 sidefnt"> 
         {{ block "left-sidebar" . }}
         {{ end }}
       </div>
-      <div class="w-80 mw7 center pa4 mt5"> 
+      <div class="body-width center pa4 mt5"> 
         {{ block "main" . }}
         {{ end }}
       </div>
-      <div class="w-20 mw5 fixed-top-right mt6 sidefnt">
+      <div class="sidebar-display w-20 mw5 fixed-top-right mt6 sidefnt">
         {{ block "right-sidebar" . }}
         {{ end }}
       </div>
