@@ -16,14 +16,14 @@
 .book-columns {
   > :first-child {
     margin-left: 0;
-    margin-right: 2rem;
+    margin-right: 1.5rem;
   }
   > div {
-    margin-left: 2rem;
-    margin-right: 2rem;
+    margin-left: 1.5rem;
+    margin-right: 1.5rem;
   }
   > :last-child {
-    margin-left: 2rem;
+    margin-left: 1.5rem;
     margin-right: 0;
   }
 }
