@@ -1,6 +1,7 @@
 /* Styling for Hugo internal/markdown generated HTML */
 code {
-  padding: 0;
+  padding-left: .25rem;
+  padding-right: .25rem;
   color: $gray-700;
   font-family: Courier New, serif;
 }
@@ -13,6 +14,10 @@ pre {
   margin-right: $m16;
 }
 
+pre code {
+  padding: 0;
+}
+
 blockquote {
   margin: $m8 0;
   padding: $p8 $p16 0 ($p16 - $p4); //to keep total left space 16dp
@@ -22,6 +27,11 @@ blockquote {
 
   :first-child { margin-top: 0; }
   :last-child { margin-bottom: 0; }
+}
+
+.katex {
+  padding-left: .3rem;
+  padding-right: .3rem;
 }
 
 .figs {
