@@ -46,3 +46,8 @@ blockquote {
 .pis-0 {
   padding-inline-start: 0;
 }
+
+span.mord.text {
+  /* For \text within the Katex environment */
+  @extend %bodyfont-light;
+}
