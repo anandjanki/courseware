@@ -1,0 +1,17 @@
+{{ $first_label := .Get 0 }}
+{{ $second_label := .Get 1 }}
+
+{{ $content := split .Inner "<--->" }}
+{{ $first_content := index $content 0 }}
+{{ $second_content := index $content 1 }}
+
+<table class="w-100">
+<tr class="">
+<td class="w-10 pv2 ph2 v-top gold bg-dark-blue">{{ $first_label | markdownify }}</td>
+<td class="">{{ $first_content | markdownify }}</td>
+</tr>
+<tr>
+<td class="v-top pv2 ph2 light-red">{{ $second_label | markdownify }}</td>
+<td class="">{{ $second_content | markdownify }}</td>
+</tr>
+</table>

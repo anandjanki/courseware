@@ -21,6 +21,8 @@ window.onload = function() {
 
 	function drawPath() {
 
+		if ( toc === null ) return;
+
 		tocItems = [].slice.call( toc.querySelectorAll( 'li' ) );
 
 		// Cache element references and measurements
@@ -89,6 +91,8 @@ window.onload = function() {
 
 		var visibleItems = 0;
 
+		var lastVisibleItem;
+
 		tocItems.forEach( function( item ) {
 
 			var targetBounds = item.target.getBoundingClientRect();
@@ -101,11 +105,25 @@ window.onload = function() {
 
 				item.listItem.classList.add( 'visible' );
 			}
+			else if ( targetBounds.bottom < windowHeight * TOP_MARGIN ) {
+				lastVisibleItem = item;
+				item.listItem.classList.remove( 'visible' );
+			}
 			else {
 				item.listItem.classList.remove( 'visible' );
 			}
 
 		} );
+
+		if (visibleItems == 0) {
+			pathStart = Math.min( lastVisibleItem.pathStart, pathStart );
+			pathEnd = Math.max( lastVisibleItem.pathEnd, pathEnd );
+
+			visibleItems += 1;
+
+			lastVisibleItem.listItem.classList.add( 'visible' );
+		}
+
 
 		// Specify the visible path or hide the path altogether
 		// if there are no visible items

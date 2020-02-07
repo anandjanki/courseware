@@ -3,9 +3,17 @@
 <link href="https://fonts.googleapis.com/css?family=Zilla+Slab:300,300i,600&display=swap" rel="stylesheet">
 <link href="https://fonts.googleapis.com/css?family=Josefin+Slab:400,600&display=swap" rel="stylesheet">
 
+
 <link rel="stylesheet" href="https://unpkg.com/tachyons@4.10.0/css/tachyons.min.css"/>
 
 {{- $sass := resources.Get "sass/courseware.scss" }}
 {{- $styles := $sass | resources.ToCSS }}
 <link rel="stylesheet" href="{{ $styles.RelPermalink }}" integrity="{{ $styles.Data.Integrity }}">
 
+{{ range .Site.Params.custom_css -}}
+    <link rel="stylesheet" href="{{ . | absURL }}">
+{{- end }}
+
+{{ range .Params.custom_css -}}
+    <link rel="stylesheet" href="{{ . }}">
+{{- end }}

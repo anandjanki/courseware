@@ -1,6 +1,7 @@
 /* Styling for Hugo internal/markdown generated HTML */
 code {
-  padding: 0;
+  padding-left: .25rem;
+  padding-right: .25rem;
   color: $gray-700;
   font-family: Courier New, serif;
 }
@@ -11,6 +12,10 @@ pre {
   overflow-x: auto;
   margin-left: $m16;
   margin-right: $m16;
+}
+
+pre code {
+  padding: 0;
 }
 
 blockquote {
@@ -24,6 +29,11 @@ blockquote {
   :last-child { margin-bottom: 0; }
 }
 
+.katex {
+  padding-left: .3rem;
+  padding-right: .3rem;
+}
+
 .figs {
   text-align: center;
   h4 {
@@ -35,4 +45,9 @@ blockquote {
 
 .pis-0 {
   padding-inline-start: 0;
+}
+
+span.mord.text {
+  /* For \text within the Katex environment */
+  @extend %bodyfont-light;
 }

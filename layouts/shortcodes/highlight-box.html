@@ -1,0 +1,31 @@
+{{ $id := .Get 0 }}
+{{ $type := .Get 1 | default "color-header" }}
+{{ $color := .Get 2 | default "bg-lightest-blue" }}
+{{ $borders := .Get 3 | default "all-borders" }}
+{{ $th_borders := .Get 4 | default "bt bl bb" }}
+{{ $td_borders := .Get 5 | default "bb" }}
+
+{{ $th_class := "" }}
+{{ $td_class := "" }}
+{{ if eq $type "color-content" }}
+    {{ $th_class = "" }}
+    {{ $td_class = $color }}
+{{ else if eq $type "color-header" }}
+    {{ $th_class = $color }}
+    {{ $td_class = "" }}
+{{ end }}
+
+{{ if eq $borders "all-borders" }}
+    {{ $th_borders = "ba" }}
+    {{ $td_borders = "ba" }}
+{{ else if eq $borders "no-borders" }}
+    {{ $th_borders = "" }}
+    {{ $td_borders = "" }}
+{{ end }}
+
+<table id={{ $id }} class="w-100 collapse">
+<tr>
+<th class="{{ $th_borders }} w-10 {{ $th_class }} pv3 v-top">{{ $id | markdownify }}</th>
+<td class="{{ $td_borders }} ph2 {{ $td_class }}">{{ .Inner | markdownify }}</td>
+</tr>
+</table>

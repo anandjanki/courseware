@@ -1,0 +1,18 @@
+{{ $htmlTable := .Inner | markdownify }}
+
+{{ $class := .Get 0 }}
+{{ $old := "<table>" }}
+{{ $new := printf "<table class=\"%s\">" $class }}
+{{ $htmlTable := replace $htmlTable $old $new }}
+
+{{ $thead_class := .Get 1 }}
+{{ $old := "<thead>" }}
+{{ $new := printf "<thead class=\"%s\">" $thead_class }}
+{{ $htmlTable := replace $htmlTable $old $new }}
+
+{{ $tbody_class := .Get 2 }}
+{{ $old := "<tbody>" }}
+{{ $new := printf "<tbody class=\"%s\">" $tbody_class }}
+{{ $htmlTable := replace $htmlTable $old $new }}
+
+{{ $htmlTable | safeHTML }}
