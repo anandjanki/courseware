@@ -10,7 +10,18 @@
 }
 
 .flex-1 {
-  flex: 1;
+  flex-grow: 1;
+  flex-shrink: 1;
+}
+.flex-bauto {
+  flex-basis: auto;
+}
+$i: 0;
+@for $i from 0 through 20 {
+  $j: $i * 5;
+  .flex-b#{$j} {
+    flex-basis: $j * 1%;
+  }
 }
 
 .katex {
@@ -118,3 +129,10 @@
   }
 }
 
+.book-columns figure { /* Remove margins for figures inside columns */
+    display: block;
+    margin-block-start: 0; /* default for figure is 1em */
+    margin-block-end: 0; /* default for figure is 1em */
+    margin-inline-start: 0; /* default for figure is 40px */
+    margin-inline-end: 0; /* default for figure is 40px */
+}
