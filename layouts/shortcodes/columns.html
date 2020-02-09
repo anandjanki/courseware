@@ -1,7 +1,21 @@
 <div class="book-columns flex justify-between">
-  {{ range split .Inner "<--->" }}
-  <div class="flex-1">
-    {{ . | markdownify }}
+  {{ $column_contents := split .Inner "<--->" }}
+
+  {{ $x := slice }}
+  {{ $param := .Get 0 }}
+  {{ range $i, $v := (seq (len $column_contents)) }}
+    {{ if $param }}
+      {{ $widths := split $param "," }}
+      {{ $x = $x | append (index $widths $i) }}
+    {{ else }}
+      {{ $x = $x | append 0 }}
+    {{ end }}
+  {{ end }}
+
+  {{ range $index, $element := $column_contents }}
+  <div class="flex-1 flex-b{{ index $x $index }} ">
+    {{ $element | markdownify }}
   </div>
   {{ end }}
 </div>
+
